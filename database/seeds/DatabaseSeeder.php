@@ -13,7 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UserSeeder::class);
         $this->call(TestSeeder::class);
-        factory(\App\Models\Question::class, 50)->create();
+        $this->call(QuestionSeeder::class);
+//        factory(\App\Models\Question::class, 50)->create();
         factory(\App\Models\Answer::class, 400)->create();
         factory(\App\Models\User::class, 10)->create();
     }
