@@ -14,5 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('tests.index');
 });
+
+Route::resource('tests', 'TestController')
+    ->middleware('auth');
+
+Route::resource('results', 'ResultController')
+    ->except(['create', 'edit', 'update'])
+    ->middleware('auth');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
