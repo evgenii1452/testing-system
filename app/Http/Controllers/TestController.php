@@ -94,7 +94,7 @@ class TestController extends Controller
      */
     public function update(Request $request, int $id)
     {
-        $data = $request->input();
+        $data = $request->all();
         $test = $this->testService
                      ->updateWithRelations($id, $data);
 

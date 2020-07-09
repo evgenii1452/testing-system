@@ -5,6 +5,7 @@ namespace App\Services\Results;
 
 
 use App\Models\Result;
+use App\Models\Test;
 use App\Services\Results\Repositories\ResultRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
@@ -89,7 +90,7 @@ class ResultService
         return $testResults;
     }
 
-    public function deleteResultsThroughTest($test)
+    public function deleteResultsThroughTest(Test $test)
     {
         $this->repository->deleteThroughTest($test);
     }

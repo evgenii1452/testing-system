@@ -77,8 +77,10 @@ class TestService
      */
     public function createWithRelations(array $data): Test
     {
+        $dataForCreateTest = ['theme' => $data['theme']];
+
         $test = $this->repository
-                     ->createFromArray($data);
+                     ->createFromArray($dataForCreateTest);
 
         $questions = $this->questionService
                           ->createQuestionsThroughTest($test, $data['questions']);
@@ -118,12 +120,18 @@ class TestService
     public function updateWithRelations(int $id, array $data): Test
     {
         $dataForUpdateTest = ['theme' => $data['theme']];
+
         $test = $this->repository->getById($id);
+
         $test = $this->repository->updateFromArray($test, $dataForUpdateTest);
 
+        //Remove all dependencies before
+        // creating new relations
+        $this->resultService->deleteResultsThroughTest($test);
         $this->answerService->deleteAnswersThroughQuestions($test->questions);
         $this->questionService->deleteQuestionsThroughTest($test);
 
+        //Create new relations
         $questions = $this->questionService
             ->updateQuestionsThroughTest($test, $data['questions']);
         $this->answerService

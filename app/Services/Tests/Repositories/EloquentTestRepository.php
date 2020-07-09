@@ -52,7 +52,7 @@ class EloquentTestRepository implements TestRepositoryInterface
      */
     public function createFromArray(array $data): Test
     {
-        $test = Test::create(['theme' => $data['theme']]);
+        $test = Test::create($data);
 
         return $test;
     }

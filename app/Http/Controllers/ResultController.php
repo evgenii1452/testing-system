@@ -44,7 +44,7 @@ class ResultController extends Controller
         $data = $request->input();
         $this->resultService->createResultThroughUser($data);
 
-        return redirect()->route('results.index');
+        return redirect()->route('results.show', $data['test_id']);
     }
 
     /**
