@@ -9,8 +9,8 @@ class Result extends Model
 
     protected $fillable = [
         'test_id',
-        'user_id',
-        'answer_list',
+        'question_id',
+        'answer_id',
     ];
 
     public function test()
@@ -21,6 +21,16 @@ class Result extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function question()
+    {
+        return $this->belongsTo(Question::class);
+    }
+
+    public function answer()
+    {
+        return $this->belongsTo(Answer::class);
     }
 
 }

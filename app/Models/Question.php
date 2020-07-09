@@ -18,6 +18,11 @@ class Question extends Model
 
     public function test()
     {
-        $this->belongsTo(Test::class);
+        return $this->belongsTo(Test::class);
+    }
+
+    public function results()
+    {
+        return $this->hasMany(Result::class);
     }
 }

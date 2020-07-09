@@ -8,6 +8,7 @@ class Test extends Model
 {
     protected $fillable = [
         'theme',
+        'slug'
     ];
 
     public function questions()
@@ -18,5 +19,10 @@ class Test extends Model
     public function results()
     {
         return $this->hasMany(Result::class);
+    }
+
+    public function answers()
+    {
+        return $this->hasManyThrough(Answer::class, Question::class);
     }
 }
