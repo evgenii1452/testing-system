@@ -26,6 +26,11 @@ class AppServiceProvider extends ServiceProvider
         }
 
         $this->app->bind(
+            ResultRepositoryInterface::class,
+            EloquentResultRepository::class
+        );
+
+        $this->app->bind(
             TestRepositoryInterface::class,
             EloquentTestRepository::class
         );
