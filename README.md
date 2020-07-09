@@ -1,19 +1,29 @@
 ## Instalation
+
+```bash
 1. $ git clone https://github.com/evgenii1452/testing-system.git
-
+```
+```bash
 2. $ composer install
-
+```
+```bash
 3. $ npm install
-
+```
+```bash
 4. $ npm run dev
-
+```
+```bash
 5. $ cp .env.example .env
-
+```
+```bash
 6. Set up your database in an .env file
-
+```
+```bash
 7. $ php artisan key:generate
-
+```
+```bash
 8. $ php artisan migrate --seed
+```
 ****
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
