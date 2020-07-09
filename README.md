@@ -1,3 +1,20 @@
+## Instalation
+1. $ git clone https://github.com/evgenii1452/testing-system.git
+
+2. $ composer install
+
+3. $ npm install
+
+4. $ npm run dev
+
+5. $ cp .env.example .env
+
+6. Set up your database in an .env file
+
+7. $ php artisan key:generate
+
+8. $ php artisan migrate --seed
+****
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
@@ -83,3 +100,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+ 
